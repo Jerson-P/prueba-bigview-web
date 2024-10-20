@@ -20,43 +20,43 @@ Las dependencias principales que el proyecto utiliza están definidas en el arch
 
 ### Clonar el Proyecto
 Puedes clonar el repositorio desde el control de versiones (Git):
-\`\`\`bash
+```bash
 git clone https://github.com/Jerson-P/prueba-bigview-web.git
 cd frontend-reservas-vuelos
-\`\`\`
+```
 
 ### Instalar Dependencias
 Una vez clonado el repositorio, instala las dependencias necesarias con el siguiente comando:
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### Configurar el Backend (Cambiar el localhost)
 Para que el frontend se comunique correctamente con el backend, debes configurar la URL del backend en el archivo **environment.ts**. 
 
 1. Ve al archivo `src/environments/environment.ts`.
 2. Cambia la propiedad `apiUrl` para que apunte a la IP del backend que estés utilizando. Por ejemplo:
-\`\`\`typescript
+```typescript
 export const environment = {
   production: false,
   apiUrl: 'http://<IP_BACKEND>:<PUERTO>' // Reemplaza con la IP y puerto donde estén desplegados tus microservicios
 };
-\`\`\`
+```
 
 ### Cambiar el Puerto del Frontend
 Por defecto, el proyecto se ejecuta en el puerto 4200. Si deseas cambiarlo, puedes hacerlo modificando el archivo `angular.json` en la sección de `serve`:
-\`\`\`json
+```json
 "options": {
   "port": 4200
 }
-\`\`\`
+```
 
 ## Ejecutar la Aplicación en Local
 
 Para ejecutar el proyecto en tu entorno local, asegúrate de haber configurado el archivo `environment.ts` con la IP correcta del backend y luego usa el siguiente comando para iniciar la aplicación:
-\`\`\`bash
+```bash
 ng serve
-\`\`\`
+```
 Esto iniciará la aplicación en el puerto por defecto (4200), o el puerto que hayas configurado, y podrás acceder a ella desde tu navegador en:
 ```
 http://localhost:4200
@@ -65,7 +65,7 @@ http://localhost:4200
 ## Estructura del Proyecto
 
 El proyecto sigue una estructura estándar de Angular:
-\`\`\`bash
+```bash
 prueba-bigview-web/
 ├── src
 │   ├── app
@@ -82,7 +82,7 @@ prueba-bigview-web/
 ├── angular.json
 ├── package.json
 └── README.md
-\`\`\`
+```
 
 - **src/app/components**: Contiene los componentes de la aplicación, como el de vuelos y reservas.
 - **src/app/services**: Contiene los servicios para la comunicación con el backend.
