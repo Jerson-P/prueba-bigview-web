@@ -90,6 +90,43 @@ prueba-bigview-web/
 - **angular.json**: Configuración de Angular CLI.
 - **package.json**: Archivo de configuración de Node.js y gestión de dependencias.
 
+## Ejemplos de uso de la API
+El frontend realiza peticiones a diferentes endpoints del backend, como por ejemplo:
+- **Filtrar vuelos**: Una petición POST al endpoint /vuelo/buscar con los filtros aplicados, como origen, destino y fecha.
+ 
+```bash
+this.http.post(`${this.apiUrl}/vuelo/buscar`, filtros).subscribe(
+  (response: any) => {
+    this.vuelos = response.objectResponse;
+  },
+  (error: any) => {
+    alert('Error al filtrar vuelos');
+  }
+);
+
+```
+- **Reservar vuelo**: Se hace una petición POST al endpoint /reserva con el id del vuelo y el id del usuario autenticado.
+
+```bash
+this.http.post(`${this.apiUrl}/reserva`, reserva).subscribe(
+  (response) => {
+    alert('Reserva realizada exitosamente');
+  },
+  (error) => {
+    alert('Error al reservar el vuelo');
+  }
+);
+
+```
+## Pruebas
+
+Este proyecto incluye pruebas unitarias configuradas con Karma y Jasmine. Para ejecutar las pruebas, utiliza el siguiente comando:
+
+```bash
+ng test
+
+```
+
 ## Contacto
 
 Si tienes alguna pregunta o problema con el proyecto, por favor contacta a **jersons156@gmail.com**.
