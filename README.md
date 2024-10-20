@@ -1,27 +1,95 @@
-# GestionReservasFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+# Gestión de Reservas - Frontend del Sistema de Vuelos
 
-## Development server
+Este es el frontend del sistema de gestión de reservas de vuelos. Está desarrollado en Angular y permite a los usuarios buscar vuelos, hacer reservas, y otras operaciones relacionadas con la gestión de vuelos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requisitos
 
-## Code scaffolding
+### Software Necesario:
+- **Node.js** (versión 18 o superior)
+- **Angular CLI** (versión 16 o superior)
+- **Git** para clonar el repositorio
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Dependencias del Proyecto:
+Las dependencias principales que el proyecto utiliza están definidas en el archivo `package.json`. Algunas importantes incluyen:
+- Angular Material
+- RxJS
+- Angular JWT
 
-## Build
+## Configuración del Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Clonar el Proyecto
+Puedes clonar el repositorio desde el control de versiones (Git):
+\`\`\`bash
+git clone https://github.com/Jerson-P/prueba-bigview-web.git
+cd frontend-reservas-vuelos
+\`\`\`
 
-## Running unit tests
+### Instalar Dependencias
+Una vez clonado el repositorio, instala las dependencias necesarias con el siguiente comando:
+\`\`\`bash
+npm install
+\`\`\`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Configurar el Backend (Cambiar el localhost)
+Para que el frontend se comunique correctamente con el backend, debes configurar la URL del backend en el archivo **environment.ts**. 
 
-## Running end-to-end tests
+1. Ve al archivo `src/environments/environment.ts`.
+2. Cambia la propiedad `apiUrl` para que apunte a la IP del backend que estés utilizando. Por ejemplo:
+\`\`\`typescript
+export const environment = {
+  production: false,
+  apiUrl: 'http://<IP_BACKEND>:<PUERTO>' // Reemplaza con la IP y puerto donde estén desplegados tus microservicios
+};
+\`\`\`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Cambiar el Puerto del Frontend
+Por defecto, el proyecto se ejecuta en el puerto 4200. Si deseas cambiarlo, puedes hacerlo modificando el archivo `angular.json` en la sección de `serve`:
+\`\`\`json
+"options": {
+  "port": 4200
+}
+\`\`\`
 
-## Further help
+## Ejecutar la Aplicación en Local
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para ejecutar el proyecto en tu entorno local, asegúrate de haber configurado el archivo `environment.ts` con la IP correcta del backend y luego usa el siguiente comando para iniciar la aplicación:
+\`\`\`bash
+ng serve
+\`\`\`
+Esto iniciará la aplicación en el puerto por defecto (4200), o el puerto que hayas configurado, y podrás acceder a ella desde tu navegador en:
+```
+http://localhost:4200
+```
+
+## Estructura del Proyecto
+
+El proyecto sigue una estructura estándar de Angular:
+\`\`\`bash
+prueba-bigview-web/
+├── src
+│   ├── app
+│   │   ├── components
+│   │   │   └── login
+│   │   │   └── nuevo-vuelo-dialog
+│   │   │   └── registrar
+│   │   │   └── reservas-usuario
+│   │   │   └── user-bar
+│   │   │   └── vuelos
+│   │   ├── services
+│   │   └── guards
+│   └── environments
+├── angular.json
+├── package.json
+└── README.md
+\`\`\`
+
+- **src/app/components**: Contiene los componentes de la aplicación, como el de vuelos y reservas.
+- **src/app/services**: Contiene los servicios para la comunicación con el backend.
+- **src/environments**: Contiene la configuración de ambientes.
+- **angular.json**: Configuración de Angular CLI.
+- **package.json**: Archivo de configuración de Node.js y gestión de dependencias.
+
+## Contacto
+
+Si tienes alguna pregunta o problema con el proyecto, por favor contacta a **jersons156@gmail.com**.

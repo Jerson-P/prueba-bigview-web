@@ -1,0 +1,13 @@
+<div class="login-container">
+  <form (ngSubmit)="login()">
+    <label for="correo">Correo:</label>
+    <input [(ngModel)]="credentials.correo" name="correo" type="email" required />
+
+    <label for="contrasena">Contraseña:</label>
+    <input [(ngModel)]="credentials.contrasena" name="contrasena" type="password" required />
+
+    <button type="submit">Login</button>
+  </form>
+
+  <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate aquí</a></p>
+</div>

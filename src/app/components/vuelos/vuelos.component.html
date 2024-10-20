@@ -1,0 +1,46 @@
+<h2>Lista de Vuelos</h2>
+
+<!-- Filtrado de los vuelos -->
+<form class="filtro-vuelos-form" cdkScrollable>
+  <mat-form-field appearance="fill" floatLabel="auto">
+    <mat-label>Origen</mat-label>
+    <mat-select [(ngModel)]="filtros.origen" name="origen">
+      <mat-option [value]="null">Todos</mat-option>
+      <mat-option *ngFor="let pais of paises" [value]="pais">{{ pais }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" floatLabel="auto">
+    <mat-label>Destino</mat-label>
+    <mat-select [(ngModel)]="filtros.destino" name="destino">
+      <mat-option [value]="null">Todos</mat-option>
+      <mat-option *ngFor="let pais of paises" [value]="pais">{{ pais }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" floatLabel="auto">
+    <mat-label>Fecha de Salida</mat-label>
+    <input matInput [(ngModel)]="filtros.fechaSalida" name="fechaSalida" type="date">
+  </mat-form-field>
+</form>
+<form class="button-vuelos-form" (ngSubmit)="filtrarVuelos()">
+  <button mat-raised-button color="primary" type="submit">Buscar</button>
+  <button mat-raised-button color="accent" (click)="abrirNuevoVueloDialog()">Nuevo Vuelo</button>
+</form>
+
+<!-- Cards Vuelos enlistados -->
+<div *ngFor="let vuelo of vuelos" class="vuelo-card">
+  <mat-card class="vuelo-card-item">
+    <mat-card-header>
+      <mat-card-title>Origen: {{ vuelo.origen }} - Destino: {{ vuelo.destino }}</mat-card-title>
+      <mat-card-subtitle>Precio: {{ vuelo.precio }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Fecha Salida:</strong> {{ vuelo.fechaSalida | date:'short' }}</p>
+      <p><strong>Fecha Llegada:</strong> {{ vuelo.fechaLlegada | date:'short' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="reservarVuelo(vuelo.id)">Reservar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
