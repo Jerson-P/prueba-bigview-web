@@ -42,13 +42,12 @@ import { ReservasUsuarioComponent } from './components/reservas-usuario/reservas
         allowedDomains: ['localhost:8080'],
       },
     }),
-    MatDialogModule,
-    MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    BrowserAnimationsModule,
-    MatCardModule
+    MatButtonModule,
+    MatCardModule,
+    FormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
