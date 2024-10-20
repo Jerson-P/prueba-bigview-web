@@ -1,0 +1,6 @@
+<div *ngIf="usuario" class="usuario-bar">
+    <p>Bienvenido, {{ usuario.nombre }} {{ usuario.apellido }}</p>
+    <button mat-raised-button color="warn" (click)="logout()">Cerrar Sesión</button>
+    <button mat-button (click)="verReservas()">Mis Reservas</button>
+</div>
+  

@@ -1,0 +1,32 @@
+.nuevo-vuelo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .mat-dialog-container {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .mat-dialog-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+  

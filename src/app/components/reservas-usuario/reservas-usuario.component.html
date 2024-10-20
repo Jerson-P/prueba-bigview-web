@@ -1,0 +1,25 @@
+<h2>Tus Reservas</h2>
+
+<!-- Botón para regresar a la lista de vuelos -->
+<button mat-raised-button color="primary" (click)="volverAVuelos()">Ver Vuelos</button>
+
+<div *ngIf="reservas.length === 0">
+  <p>No tienes reservas.</p>
+</div>
+
+<div *ngIf="reservas.length > 0">
+  <div *ngFor="let reserva of reservas" class="reserva-card">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Vuelo: {{ reserva.vuelo.origen }} → {{ reserva.vuelo.destino }}</mat-card-title>
+        <mat-card-subtitle>Fecha Reserva: {{ reserva.fechaReserva | date:'short' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Fecha de Salida:</strong> {{ reserva.vuelo.fechaSalida | date:'short' }}</p>
+        <p><strong>Fecha de Llegada:</strong> {{ reserva.vuelo.fechaLlegada | date:'short' }}</p>
+        <p><strong>Precio del Vuelo:</strong> {{ reserva.vuelo.precio | currency }}</p>
+        <p><strong>Estado de la Reserva:</strong> {{ reserva.estado }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

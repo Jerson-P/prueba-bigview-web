@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>Nuevo Vuelo</h2>
+
+<form class="nuevo-vuelo-form" (ngSubmit)="guardarVuelo()">
+  <mat-form-field appearance="fill">
+    <mat-label>Origen</mat-label>
+    <mat-select [(ngModel)]="nuevoVuelo.origen" name="origen" required>
+      <mat-option *ngFor="let pais of paises" [value]="pais">{{ pais }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Destino</mat-label>
+    <mat-select [(ngModel)]="nuevoVuelo.destino" name="destino" required>
+      <mat-option *ngFor="let pais of paises" [value]="pais">{{ pais }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de Salida</mat-label>
+    <input matInput [(ngModel)]="nuevoVuelo.fechaSalida" name="fechaSalida" type="date" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fecha de Llegada</mat-label>
+    <input matInput [(ngModel)]="nuevoVuelo.fechaLlegada" name="fechaLlegada" type="date" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Disponibilidad</mat-label>
+    <input matInput [(ngModel)]="nuevoVuelo.disponibilidad" name="precio" type="number" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Precio</mat-label>
+    <input matInput [(ngModel)]="nuevoVuelo.precio" name="precio" type="number" required>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">Guardar</button>
+  </div>
+</form>
